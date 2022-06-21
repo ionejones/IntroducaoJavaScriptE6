@@ -1,3 +1,57 @@
+//Exemplo do uso do REDUCE (vai subtrair todos os valores de um array de objetos de um saldo )
+const lista = [
+  {
+  produto : 'sapato',
+  preco: 300
+},
+{
+  produto : 'calça',
+  preco: 150
+},
+{
+  produto : 'saia',
+  preco: 200
+}
+]
+
+const saldoConta = 1500;
+
+function calculaSaldo (saldoConta, lista) {
+   return lista.reduce (function(prev, current,  index)
+  {
+    console.log ('Rodada : ', index+1);
+    console.log ('Item ',current.produto,' ',current.preco);
+    return prev - current.preco;
+  }, saldoConta);
+}
+
+console.log ('O novo saldo da conta é ',calculaSaldo(saldoConta, lista));
+
+//Exemplo do uso do REDUCE (vai somar todos os números do array)
+// const oArray = [3, 1, 4, 5];
+// const inicial = 2;
+// function somaNumeros (arr) {
+//   return arr.reduce(function(ant, atual){
+//   return ant + atual;
+//   } , inicial)
+
+// }
+
+// console.log ('A soma é ',somaNumeros(oArray));
+
+// Exemplo do uso do FILTER
+// function filtraPares (arr) {
+//    return arr.filter(ehPar);
+// } 
+
+// function ehPar(item) {
+//   return item % 2 === 0;
+// }
+
+// const oArray = [20, 3, 44, 56, 7, 9];
+
+// console.log ('Os valores pares são : ',filtraPares(oArray));
+
 // Exemplo utilizando MAP sem THIS
 // const nums = [1,2]
 
